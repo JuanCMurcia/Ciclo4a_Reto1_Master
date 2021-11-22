@@ -20,7 +20,7 @@ body * {
 
 /*Definicion contenedor formulario*/
 .contenedor {
-  width: 310px;
+  width: 400px;
   background-color: #297ed3;
   padding: 20px;
   margin: auto;
@@ -44,9 +44,8 @@ body * {
 }
 
 /*Ajuste cajas Inputs*/
-input,
-select {
-  width: 90%;
+input,select {
+  width: 92%;
   cursor: pointer;
   padding: 7px 14px;
   border-radius: 4px;
@@ -67,16 +66,6 @@ button {
   box-shadow: 5px 1px 10px #0d3283;
 }
 
-button #boton2 {
-  cursor: pointer;
-  padding: 7px 14px;
-  border-radius: 4px;
-  border-width: 1px;
-  border-style: solid;
-  margin-left: 30%;
-  border-color: transparent;
-  /*box-shadow: 5px 1px 10px #0d3283;*/
-}
 
 .borde {
   padding: 20px;
