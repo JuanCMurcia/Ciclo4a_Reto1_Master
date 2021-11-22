@@ -5,48 +5,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="fav/favicon-32x32.png">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="fav/favicon.ico" type="image/x-icon">
+    <title>AltoTurmeque : Login</title>
 
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--llamado de la libreria Ajax y el jquery  /  bootstrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
-    <title>De alto turmeque LTDA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/scripts.js"></script>
 </head>
 
 <body>
-    <div id="login">
-        <h3 class="text-center pt-5">De alto turmeque LTDA</h3>
-        <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6">
-                    <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
-                            <h3 class="text-center text-white">Inicio de sesion</h3>
-                            <div class="form-group">
-                                <label for="useremail" class="text-white">E-mail:</label><br />
-                                <input type="email" name="useremail" id="useremail" class="form-control" required />
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="text-white">Contraseña:</label><br />
-                                <input type="text" name="password" id="password" class="form-control" required />
-                            </div>
-                            <div class="form-group text-center">
-                                <input type="submit" name="submit" class="btn btn-md" value="Ingresar" />
-                            </div>
-                            <div class="form-group text-center">
-                                <label for="remember-me" class="text-white">
-                                    <span>No tienes una cuenta? <a href="registro.html" class="text-white">Crea tu cuenta
-                                            aqui</a></span>
-                                </label>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+    <header>
+        <h2 id="titulo">Iniciar Seccion</h2>
+    </header>
+
+    <section class="contenedor">
+        <div class="borde" id="bienvenido">
+
+
+            <div class="mb-10px d-flex text-center">
+                <label>Email :</label><br>
+                <input type="email" id="email" required maxlength="50" pattern=".+@+.+"><br>
+                <br>
+                <label>Password :</label><br>
+                <input type="password" id="password" required maxlength="50"><br>
+                <br>
+                <label id="confirmar2" hidden>Confirmar Password</label><br>
+                <input type="password" id="confirmar" required maxlength="50" hidden><br>
+                <br>
+                <label id="name2" hidden>Name :</label><br>
+                <input type="text" id="name" required maxlength="50" hidden>
+                <br>
             </div>
+
+            <div>
+                <br>
+                <button class="btn-info btn-gradient mb-10px mr-10px" id="botonIngreso"
+                    onclick="validarIngreso()">Ingreso Usuario</button>
+
+                <button class="btn-info btn-gradient mb-10px mr-10px" id="botonRegistro"
+                    onclick="validarRegistro()">Crear Usuario</button><br>
+            </div>
+            <div id="resultado"></div>
+            <h4 id="validaCampo" class="text-center" style="color: rgb(1, 1, 102);"></h4>
         </div>
-    </div>
+    </section>
+
+    <section class="contenedor2" id="listar" hidden>
+        <br>
+        <button class="btn-info btn-gradient mb-10px mr-10px" id="botonListar" onclick="listarUsuarios()" hidden>Listar Usuarios</button>
+        <br>
+        <br>
+        <div id="miListaUsuarios"></div>
+        <br>
+        <br>
+        <button class="btn-info btn-gradient mb-10px mr-10px" id="botonSalir" onclick="salir()" hidden>Salir</button>
+    </section>
+
+    <section>
+        <br>
+        <button class="btn-info btn-gradient mb-10px mr-10px" id="botonInicio" onclick="salir()" hidden>Salir</button>
+    </section>
+
+    <!--Estilo de la Tabla-->
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid rgb(0, 42, 70);
+            border-collapse: collapse;
+        }
+    </style>
+    
 </body>
+
+<script>
+    $("#botonRegistro").hide();
+    $("#link").click(function (event) {
+        crearUsuario();
+        return false;
+    });
+</script>
+
 
 </html>
