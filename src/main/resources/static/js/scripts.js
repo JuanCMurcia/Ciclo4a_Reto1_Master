@@ -1,3 +1,18 @@
+document.getElementById('email').addEventListener('input', function () {
+    let campo = event.target;
+    let valido = document.getElementById('emailOK');
+
+    let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+    if (emailRegex.test(campo.value)) {
+        $("#botonIngreso").attr("disabled", false);
+        $("#resultado").html("");
+    } else {
+        $("#resultado").html("<p class='loader text-center'>¡ Por Favor... <br>Ingresar un correo valido !</p>");
+        //$("#resultado").alert("error de formato en el correo");
+    }
+});
+
 
 function consultar(dato) {
     $("#resultado");
@@ -13,7 +28,7 @@ function consultar(dato) {
                 $("#bienvenido").html("<h2 align='center'>" + respuesta.name + "</p>");
                 $("#botonInicio").show();
             } else if ((respuesta.id == null && dato == 2)) {
-                $("#resultado").html("<p class='loader text-center'>Un Momento.Creando la cuenta...</p>");
+                $("#resultado").html("<p class='loader text-center'>! Un Momento... <br>Creando la cuenta... ¡</p>");
                 alert("Usuario Creado Satisfactoriamente")
                 guardar();
             } else {

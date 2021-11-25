@@ -8,14 +8,9 @@
     <link rel="shortcut icon" href="fav/favicon.ico" type="image/x-icon">
     <title>AltoTurmeque : Login</title>
 
-    <!--llamado de la libreria Ajax y el jquery  /  bootstrap-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
+    <!--Llamado de los estilos utilizados en el FrontEnd-->
     <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" src="js/scripts.js"></script>
+    
 </head>
 
 <body>
@@ -63,12 +58,12 @@
         <div id="miListaUsuarios"></div>
         <br>
         <br>
-        <button class="btn-info btn-gradient mb-10px mr-10px" id="botonSalir" onclick="salir()" hidden>Salir</button>
+        <button class="btn-info btn-gradient mb-10px mr-10px" id="botonSalir" onclick="salir()" hidden>Ir a Inicio</button>
     </section>
 
     <section>
         <br>
-        <button class="btn-info btn-gradient mb-10px mr-10px" id="botonInicio" onclick="salir()" hidden>Salir</button>
+        <button class="btn-info btn-gradient mb-10px mr-10px" id="botonInicio" onclick="salir()" hidden>Ir a Inicio</button>
     </section>
 
     <!--Estilo de la Tabla-->
@@ -80,11 +75,19 @@
             border-collapse: collapse;
         }
     </style>
-    
+
+    <!--llamado de la libreria Ajax y el jquery  /  bootstrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
+
 </body>
 
 <script>
     $("#botonRegistro").hide();
+    $("#botonIngreso").attr("disabled", true);
     $("#link").click(function (event) {
         crearUsuario();
         return false;

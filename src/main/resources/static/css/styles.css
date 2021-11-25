@@ -74,3 +74,10 @@ button {
   background-color: rgba(107, 192, 248, 0.63);
   box-shadow: 5px 1px 10px #0d3283;
 }
+
+#resultado{
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 19px;
+  text-align: center;
+}
